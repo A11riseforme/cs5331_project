@@ -1,0 +1,18 @@
+{
+    "/wp-admin/admin-ajax.php":{
+        "action=edit-theme-plugin-file":[
+            "/wp-admin/theme-editor.php",
+            "/wp-admin/plugin-editor.php"
+        ]
+    },
+    "/wp-admin/user-new.php":{
+        "action=createuser":[
+            "/wp-admin/user-new.php"
+        ]
+    },
+    "/wp-admin/profile.php":{
+        "from=profile":[
+            "/wp-admin/profile.php"
+        ]
+    }
+}
