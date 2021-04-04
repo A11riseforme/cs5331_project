@@ -1,40 +1,52 @@
 {
-  "description": "Defend hackers from attacking wordpress from the client side",
-  "manifest_version": 2,
-  "name": "wordefension",
-  "version": "1.0",
+    "description":"Defend hackers from attacking wordpress from the client side",
 
-  "browser_action": {
-    "default_title": "wordefension"
-  },
+    "manifest_version":2,
 
-  "permissions": [
-    "storage",
-    "tabs",
-    "webRequest",
-    "webRequestBlocking",
-    "<all_urls>"
-  ],
+    "name":"wordefension",
 
-  "options_ui": {
-    "page": "options.html",
-    "browser_style": true
-  },
+    "version":"1.0",
 
-  "background": {
-    "scripts": ["background.js"]
-  },
+    "browser_action":{
+        "default_icon": {
+            "840": "button/icon.png"
+        },
+        "default_title":"wordefension"
+    },
 
-  "content_scripts" : [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
+    "permissions":[
+        "storage",
+        "tabs",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+
+    "options_ui":{
+        "page":"options.html",
+        "browser_style":true
+    },
+
+    "background":{
+        "scripts":[
+            "background.js"
+        ]
+    },
+
+    "content_scripts":[
+        {
+            "matches":[
+                "<all_urls>"
+            ],
+            "js":[
+                "content.js"
+            ]
+        }
+    ],
+
+    "browser_specific_settings":{
+        "gecko":{
+            "id":"cs5331_2021_group16@websec.pw"
+        }
     }
-  ],
-
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "cs5331_2021_group16@websec.pw"
-    }
-  }
 }
