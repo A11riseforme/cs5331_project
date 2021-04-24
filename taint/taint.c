@@ -1076,7 +1076,6 @@ static int php_taint_fcall_check(zend_execute_data *ex, const zend_op *opline, z
 				char *filename = ZSTR_VAL(Z_STR_P(p));
 
 				// check if filename contains `../`
-				char *test = strstr(filename, "../");
 				if (strstr(filename, "../")) {
 					// don't continue execution!
 					return 0;
