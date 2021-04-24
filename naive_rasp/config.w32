@@ -1,0 +1,7 @@
+ARG_ENABLE('naive_rasp', 'naive_rasp support', 'no');
+
+if (PHP_NAIVE_RASP != 'no') {
+	AC_DEFINE('HAVE_NAIVE_RASP', 1, 'naive_rasp support enabled');
+
+	EXTENSION('naive_rasp', 'naive_rasp.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
