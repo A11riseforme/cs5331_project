@@ -1260,7 +1260,7 @@ static int php_taint_fcall_handler(zend_execute_data *execute_data) /* {{{ */ {
 		php_printf("");
 	}
 
-	//CALL_ORIGIN_HANDLER();
+	CALL_ORIGIN_HANDLER();
 	if (good) {
 		return ZEND_USER_OPCODE_DISPATCH;
 	} else {
