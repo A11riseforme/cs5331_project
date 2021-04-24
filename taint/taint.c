@@ -1073,14 +1073,14 @@ static int php_taint_fcall_check(zend_execute_data *ex, const zend_op *opline, z
 			if (p && IS_STRING == Z_TYPE_P(p) && TAINT_POSSIBLE(Z_STR_P(p))) {
 				php_taint_error(ZSTR_VAL(fname), "Attempt to open a file which path might be tainted");
 				
-    			char *filename = ZSTR_VAL(Z_STR_P(p));
+				char *filename = ZSTR_VAL(Z_STR_P(p));
 
-    			// check if filename contains `../`
+				// check if filename contains `../`
 				char *test = strstr(filename, "../");
-    			if (strstr(filename, "../")) {
-        			// don't continue execution!
-        			return 0;
-   				}
+				if (strstr(filename, "../")) {
+					// don't continue execution!
+					return 0;
+				}
 				
 			}
 		} else if (zend_string_equals_literal(fname, "unlink")) {
