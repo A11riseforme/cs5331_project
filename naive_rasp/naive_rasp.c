@@ -147,8 +147,10 @@ static int php_do_icall_handler(zend_execute_data *execute_data)
 	char *funcname = ZSTR_VAL(fname);
 	//php_printf("you are icalling %s!\n", funcname);
 
-	// if not fopen being called
-	if (!zend_string_equals_literal(fname, "fopen"))
+	// if not fopen or readfile or file_get_contents being called
+	if ((!zend_string_equals_literal(fname, "fopen")) &&
+        (!zend_string_equals_literal(fname, "readfile")) && 
+        (!zend_string_equals_literal(fname, "file_get_contents")))
 	{
 		return ZEND_USER_OPCODE_DISPATCH;
 	}
