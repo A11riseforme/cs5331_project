@@ -22,6 +22,6 @@ edit the php.ini to enable the extension
 
 ### Usage
 
-You don't have to anything, the extension will watch out for dangerous arguments passed to functions like `fopen`, `readfile`, and `file_get_contents`, and it will stop the execution when needed. Just like below
+You don't have to do anything, the extension will watch out for dangerous arguments passed to functions like `fopen`, `readfile`, and `file_get_contents`, and it will stop the execution when needed. Just like below
 
 ![Kazam_screenshot_00000](images/Kazam_screenshot_00000.png)
